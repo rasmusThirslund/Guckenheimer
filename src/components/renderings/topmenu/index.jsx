@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import styles from "./topmenu.scss";
 import classNames from "classnames/bind";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 let cx = classNames.bind(styles);
 
