@@ -1,24 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import App from "./app";
-import App_page2 from "./app_page2";
+import Landing from "./landing";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-if (document.querySelector('#root')) {
-    ReactDOM.render(
-        <App/>,
-        document.getElementById('root')
-    );
-};
-
-if (document.querySelector('#page2')) {
-    ReactDOM.render(
-        <App_page2/>,
-        document.getElementById('page2')
-    )
-};
-
-
-
+ReactDOM.render(
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={Landing} />
+      <Route path="/menu" component={App} />
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById("root")
+);
 
 if (module.hot) {
   module.hot.accept();
