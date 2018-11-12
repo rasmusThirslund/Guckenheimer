@@ -1,0 +1,205 @@
+@import "../../../styles/tools";
+
+.todaysMenu {
+    @extend %section-block;
+
+    padding: 0 0 rem(12);
+
+    @include mix-break-lg {
+        padding: rem(24 30 14);
+    }
+
+
+    .todaysMenuNav {
+        display: none;
+
+        @include mix-break-md {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+        }
+    }
+
+    .todaysMenuNavItem {
+        padding: 0 0.25em;
+    }
+
+    .todaysMenuNavButton {
+        @extend %button;
+
+        background-color: $todays-menu-tab-bg-color;
+        color: $todays-menu-tab-color;
+    }
+
+    .todaysMenuNavButtonActive {
+        background-color: $todays-menu-tab-active-bg-color;
+        color: $todays-menu-tab-active-color;
+    }
+
+    .todaysMenuSelectWrapper {
+        background: $todays-menu-tab-active-bg-color;
+        border-radius: rem(3);
+        display: flex;
+        justify-content: center;
+        padding: rem(12);
+        text-align: center;
+
+        @include mix-break-md {
+            display: none;
+        }
+    }
+
+    .todaysMenuSelectStyle {
+        display: inline-block;
+        border-radius: 3px;
+        overflow: hidden;
+        background: $white;
+    }
+
+    .todaysMenuSelect {
+        background: transparent url("data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==") no-repeat 95% 50%;
+        border: none;
+        box-shadow: none;
+        display: inline-block;
+        min-width: rem(200);
+        padding: rem(12);
+        -webkit-appearance: none;
+    }
+
+    .todaysMenuSelect::-ms-expand {
+        display: none;
+    }
+
+    .todaysMenuContainer {
+        border: 1px solid;
+        border-color: $todays-menu-container-border-color;
+        border-radius: 3px;
+        margin: $spacing 0 0;
+        padding: $spacing;
+        text-align: center;
+    }
+
+    .todaysMenuHeader {
+        color: $todays-menu-header-color;
+        font-size: 2em;
+    }
+
+    .todaysMenuLargePrice {
+        font-size: 2em;
+    }
+
+    .todaysMenuDishes {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .todaysMenuDish {
+        flex: 0 0 100%;
+        margin: 1em 0 0.5em 0;
+
+        @include mix-break-md {
+            flex: 0 0 calc(50% - 1em);
+            max-width: rem(440);
+            padding: 0 1em 0 0;
+        }
+    }
+
+    .todaysMenuDish:nth-child(even) {
+        @include mix-break-md {
+            padding: 0 0 0 1em;
+        }
+    }
+
+    .todaysMenuPriceContainer {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.25em;
+		justify-content: space-between;
+		line-height: 1.25em;
+        position: relative;
+    }
+
+    .todaysMenuDishTitle {
+		font-weight: $font-weight-strong;
+        margin: 0 rem(30) rem(5) 0;
+        text-transform: uppercase;
+
+        span {
+            background: $white;
+        }
+    }
+
+    .todaysMenuDishPrice {
+        background: $white;
+        font-weight: $font-weight-bold;
+        white-space: nowrap;
+    }
+
+    .todaysMenuDishPrice:before {
+        content: "";
+        left: 0;
+        position: absolute;
+        top: 0.95em;
+        width: 100%;
+        z-index: -1;
+		height: 1px;
+		background: linear-gradient(to right, transparent 80%, $text-color 20%);
+		background-size: 6px 1px;
+    }
+
+    .todaysMenuDishDescription {
+		padding: 0 rem(50) 0 0;
+		max-width: rem(600);
+    }
+
+    .todaysMenuDishTags {
+        display: inline;
+        padding: 0 0 0 rem(5);
+    }
+
+    .todaysMenuDishTag {
+        background-color: $todays-menu-tags-bg-color;
+        border-radius: 50%;
+        color: $todays-menu-tags-color;
+        display: inline-block;
+        font-size: 0.65em;
+        line-height: rem(17);
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        @include square(17);
+    }
+
+    .todaysMenuDishTagTitle {
+        padding: 0 0 0 rem(8);
+    }
+
+    .todaysMenuDishTagsMenu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 1em 1em 0;
+
+        @include mix-break-md {
+            justify-content: center;
+        }
+    }
+
+    .todaysMenuDishTagsMenuItem {
+        display: flex;
+        flex: 0 0 50%;
+        line-height: rem(17);
+        padding: rem(6) 0;
+        white-space: nowrap;
+
+        @include mix-break-md {
+            flex-basis: auto;
+            justify-content: center;
+            padding: 0 rem(25);
+        }
+    }
+}

@@ -1,0 +1,81 @@
+// Colors
+$white: #fff !default;
+$black: #000 !default;
+$grey-light: #eeeeef;
+
+$brand-color-1: #387091;
+$brand-color-2: #f79b14;
+$brand-color-3: #5e5e5e;
+
+// Typography
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: 1rem !default;
+
+$line-height-base: 1.5 !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-strong: 500 !default;
+$font-weight-bold: 700 !default;
+
+$font-weight-base: $font-weight-normal !default;
+
+// Main Styles
+$body-bg: $white !default;
+$text-color: #444444 !default;
+
+//Buttons
+$button-bg-color: $brand-color-2;
+$button-color: $white;
+
+//Easing
+$easing-cubic1: cubic-bezier(0.78, -0.07, 0.28, 0.98);
+$easing-cubic2: cubic-bezier(0.24, 0.5, 0.22, 0.89);
+
+//Topmenu
+$menu-item-link-color: $brand-color-3;
+$menu-height: 80;
+$mobile-menu-font-size: 1.25rem;
+$burger-menu-color: $brand-color-3;
+
+//Banner
+$banner-bg-color: rgba(0, 0, 0, 0.8);
+
+//TodaysMenu
+$todays-menu-tab-bg-color: $grey-light;
+$todays-menu-tab-active-bg-color: $brand-color-3;
+$todays-menu-tab-color: $text-color;
+$todays-menu-tab-active-color: $white;
+$todays-menu-container-border-color: $brand-color-2;
+$todays-menu-header-color: $brand-color-2;
+$todays-menu-tags-bg-color: $brand-color-2;
+$todays-menu-tags-color: $white;
+
+//TextMe
+$text-me-bg-color: $grey-light;
+$text-me-link-color: $brand-color-2;
+
+//Promotion
+$promotion-bg-color: $grey-light;
+$promotion-color: $text-color;
+
+//MeetUs
+$meet-us-bg-color: $brand-color-1;
+$meet-us-color: $white;
+
+//Footer
+$footer-bg-color: $brand-color-3;
+$footer-color: #fafafa;
+
+//Breakpoints
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1280px;
+
+// spacings
+$spacing: $line-height-base * $font-size-base;  // 24px;
+$spacing-large: $line-height-base * $font-size-base * 2;  // 48px;
+$spacing-small: rem($line-height-base * $font-size-base * .5); // 12px;

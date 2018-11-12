@@ -1,0 +1,130 @@
+// Small devices
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin mix-break-md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin mix-break-lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// Extra large devices
+@mixin mix-break-xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+// Custom devices
+@mixin rwd($screen) {
+    @media (min-width: $screen + "px") {
+        @content;
+    }
+}
+
+$baseFont: 16;
+
+@function rem($pxWidths) {
+    $remValues: null;
+
+    @each $pxValue in $pxWidths {
+        $remValues: append($remValues, $pxValue / $baseFont + rem);
+    }
+
+    @return $remValues;
+}
+
+@mixin size($width, $height) {
+    width: rem($width);
+    height: rem($height);
+}
+
+@mixin square($pxSize) {
+    @include size($pxSize, $pxSize);
+}
+
+%section-block {
+    border-radius: 3px;
+    margin: 0 1em $spacing;
+    max-width: rem(1280); // todo variable/mixin
+	overflow: hidden;
+	position: relative;
+    transform-origin: 0 0;
+	transition: transform 0.5s $easing-cubic1;
+	z-index: 1;
+
+    @include mix-break-md {
+        transition-duration: 0s;
+    }
+
+    @include mix-break-xl {
+        margin: 0 auto $spacing;
+    }
+}
+
+%reset-input {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+}
+
+%category {
+    font-weight: $font-weight-strong;
+    letter-spacing: rem(2);
+    margin: 0 0 1em;
+    text-transform: uppercase;
+}
+
+%button {
+    @extend %reset-input;
+
+    background-color: $button-bg-color;
+    border-radius: rem(3);
+    color: $button-color;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    padding: rem(12 16);
+    text-decoration: none;
+    transform: scale(1);
+    transition: all 0.2s ease-in;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+%text-input {
+    @extend %reset-input;
+
+    background-color: $white;
+    border-radius: rem(3);
+    cursor: pointer;
+    outline: none;
+    padding: rem(12 16);
+}

@@ -1,0 +1,145 @@
+@import "../../../styles/tools";
+
+.banner {
+    @extend %section-block;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+        .bannerBackground {
+            transform: scale(1.1);
+        }
+
+        .bannerLink {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .bannerBackground {
+        background-color: $banner-bg-color;
+        background-position: 50% 50%;
+        background-size: cover;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: transform 0.5s ease;
+    }
+
+    .bannerLink {
+        align-self: center;
+        background-color: rgba(0, 0, 0, 0);
+        color: $white;
+        display: flex;
+        flex-basis: 100%;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        min-height: rem(400);
+        padding: rem(30);
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        z-index: 1;
+        transition: background-color 0.5s ease;
+
+        @include mix-break-md {
+            min-height: rem(340);
+        }
+
+
+        @include mix-break-lg {
+            min-height: rem(450);
+        }
+    }
+
+    .bannerCategory {
+        @extend %category;
+    }
+
+    .bannerHeader {
+        font-size: 2.5em;
+        line-height: 1.2;
+        margin: 0 auto .5em;
+        max-width: rem(650);
+
+        @include mix-break-lg {
+            font-size: 3em;
+        }
+    }
+
+    .bannerSubLine {
+        line-height: 1.5;
+        margin: 0 auto 1.5em;
+        max-width: rem(550);
+
+        @include mix-break-lg {
+            align-self: center;
+        }
+    }
+
+    .bannerButton {
+        @extend %button;
+
+        align-self: center;
+    }
+}
+
+//Variants
+.heroBanner {
+    border-radius: 0;
+    margin: 0 auto $spacing-large;
+
+    .bannerLink {
+        min-height: rem(400);
+
+        @include mix-break-md {
+            //min-height: rem(300);
+        }
+
+
+        @include mix-break-lg {
+            min-height: rem(500);
+        }
+    }
+
+    .bannerHeader {
+        font-size: 2.5em;
+        line-height: 1.125;
+    }
+}
+
+.inlineBanner {
+    .bannerLink {
+        min-height: rem(240);
+    }
+
+    .bannerHeader {
+        font-size: 1.5em;
+        font-weight: $font-weight-strong;
+        line-height: 1.2;
+    }
+}
+
+.bannerDark {
+    .bannerLink {
+        color: $text-color;
+
+        * {
+            text-shadow: none;
+        }
+    }
+}
+
+.bannerImage {
+    .bannerCategory,
+    .bannerHeader,
+    .bannerSubLine {
+        text-shadow: $black 1px 0 10px;
+    }
+}

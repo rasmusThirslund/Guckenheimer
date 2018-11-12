@@ -1,0 +1,115 @@
+@import "../../../styles/tools";
+
+.promotion {
+    @extend %section-block;
+
+	background: $promotion-bg-color;
+	color: $promotion-color;
+	
+	@include mix-break-lg {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		padding: rem(65) 0;
+	}
+
+	.promotionDetailsDesktop {
+		display: none;
+
+		@include mix-break-lg {
+			display: block;
+			flex: 0 0 33%;
+			text-align: center;
+		}
+	}
+
+	.promotionContainer {
+		display: flex;
+		flex-direction: column;
+		padding: rem(30) 1em rem(50);
+		text-align: center;
+	
+		@include mix-break-md {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: rem(35) 1em rem(50);
+		}
+		@include mix-break-lg {
+			align-self: baseline;
+			flex: 0 0 50%;
+			flex-direction: row;
+			padding: 0 rem(30) 0 0;
+		}
+	}
+	
+    .promotionHeader {
+		@include mix-break-md {
+			flex: 0 0 100%;
+		}
+		@include mix-break-lg {
+			text-align: left;
+		}
+	}
+
+    .promotionCategory {
+        @extend %category;
+    }
+
+    .promotionHeadline {
+        font-size: 2.5em;
+        line-height: rem(45);
+        margin: 0 auto 0.7em;
+        max-width: rem(550);
+
+        @include mix-break-lg {
+			margin: 0 0 0.8em;
+			max-width: rem(650);
+        }
+    }
+
+    .promotionButton {
+        @extend %button;
+    }
+
+    .promotionDetails {
+		padding: 0 0 rem(30);
+		text-align: center;
+		
+		@include mix-break-md {
+			flex: 0 0 30%;
+			padding: 0 rem(30);
+		}
+		
+        @include mix-break-lg {
+			display: none;
+        }
+	}
+
+    .promotionImage {
+		display: block;
+		border: 4px solid $white;
+		margin: 0 auto;
+		max-width: 100%;
+    }
+
+    .promotionImageText {
+        font-size: 0.85em;
+        font-style: italic;
+        margin: 0.75em 0 0;
+    }
+
+    .promotionDescription {
+        flex: 0 0 46%;
+
+        @include mix-break-md {
+			flex: 0 0 55%;
+            text-align: left;
+        }
+		
+        @include mix-break-lg {
+			flex: 0 0 100%;
+        }
+    }
+}

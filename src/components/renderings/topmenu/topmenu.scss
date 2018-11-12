@@ -1,0 +1,206 @@
+@import "../../../styles/tools";
+
+.topMenu {
+    @extend %section-block;
+
+    background: $body-bg;
+    border-radius: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    left: 0;
+	margin: 0;
+	overflow: unset;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+	transition-duration: 0s;
+
+    @include mix-break-md {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    .logoTarget {
+        display: inline-block;
+    }
+
+    .logo {
+        display: block;
+    }
+
+    .menu {
+        margin: 0 rem(26) 0 0;
+        position: relative;
+    }
+
+    .menuTogglers {
+        @extend %reset-input;
+
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 100%;
+        margin: 0 rem(30) 0 0;
+        outline: none;
+        overflow: hidden;
+        padding: 0 0 0 0;
+        width: rem(60);
+
+        @include mix-break-md {
+            display: none;
+        }
+
+
+        .menuToggleIcon {
+            @include square(22);
+
+            display: block;
+            right: 0;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+        }
+
+        .menuToggleIcon span {
+            background: $burger-menu-color;
+            height: 2px;
+            right: 0;
+            position: absolute;
+            top: 50%;
+            width: rem(21);
+            transform: translateY(0) rotate(0deg);
+            transition: all 0.3s ease;
+        }
+
+        .menuToggleIcon span:first-child,
+        .menuToggleIcon span:last-child {
+            background: $burger-menu-color;
+            content: "";
+            height: 2px;
+            right: 0;
+            position: absolute;
+            top: 50%;
+            width: rem(21);
+            transform-origin: 0 0;
+            transform: translateY(-6px) rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+
+        .menuToggleIcon span:last-child {
+            transform: translateY(6px);
+        }
+    }
+
+    .menuToggler {
+		align-self: center;
+        flex: 0 0 rem(60);
+        position: relative;
+        text-align: right;
+
+        @include mix-break-md {
+            display: none;
+        }
+    }
+
+    .menuList {
+        background: $body-bg;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        font-size: $mobile-menu-font-size;
+        height: calc(100% - 80px);
+        left: 0;
+        padding: 1em 0 0;
+        overflow: auto;
+        position: fixed;
+        top: rem($menu-height);
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s $easing-cubic1;
+
+        @include mix-break-md {
+            flex-direction: row;
+            font-size: $font-size-base;
+            height: rem($menu-height);
+            justify-content: center;
+            margin: 0 1em;
+            padding: 0;
+            position: relative;
+            transform: translateX(0);
+            top: 0;
+            transition: transform 0s;
+        }
+    }
+
+    .menuItem {
+        align-self: center;
+        margin: 0.5em;
+
+        @include mix-break-md {
+            margin: 0 0.5em;
+        }
+    }
+
+    .menuItemLink {
+        color: $menu-item-link-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.topMenuOpen {
+    .menuTogglers {
+        .menuToggleIcon span:nth-child(2) {
+            background-color: #fff;
+            width: 0;
+        }
+
+        .menuToggleIcon span:first-child {
+            transform: translateY(-10px) translateX(6px) rotate(45deg);
+            width: rem(25);
+        }
+
+        .menuToggleIcon span:last-child {
+            transform: translateY(8px) translateX(5px) rotate(-45deg);
+            width: rem(26);
+        }
+    }
+
+    .menuToggler {
+        transform: translateX(-100%);
+    }
+
+    .menuList {
+        transform: translateX(0);
+    }
+
+    & ~ * {
+        transform: translateX(-110%);
+
+        @include mix-break-md {
+            transform: translate(0);
+        }
+    }
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  margin-right: rem(26);
+  a {
+    &,
+    &:visited,
+    &:active {
+
+      color: $menu-item-link-color;
+      text-decoration: none;
+    }
+  }
+}

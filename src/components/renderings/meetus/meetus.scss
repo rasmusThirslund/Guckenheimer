@@ -1,0 +1,133 @@
+@import "../../../styles/tools";
+
+.meetUs {
+    @extend %section-block;
+
+    padding: rem(50 50 60);
+    background: $meet-us-bg-color;
+    color: $meet-us-color;
+	text-align: center;
+	
+	* {
+		outline: none;
+	}
+
+    .meetUsCategory {
+        @extend %category;
+    }
+
+    .meetUsHeader {
+        font-size: 2.5em;
+        line-height: rem(45);
+    }
+
+    .meetUsContact {
+        padding: rem(30);
+        text-align: center;
+    }
+
+    .meetUsContactTitle {
+        font-size: 0.9em;
+        font-weight: $font-weight-bold;
+        margin: 0 0 0.5em;
+    }
+
+    .meetUsContactPhoneNo,
+    .meetUsContactEmail {
+        color: $meet-us-color;
+        display: inline-block;
+    }
+
+    .meetUsContactPhoneNo {
+        text-decoration: none;
+    }
+
+    .meetUsSlider {
+        text-align: center;
+    }
+
+    .meetUsDots {
+        bottom: rem(-40);
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+
+        li {
+            @include square(10);
+
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 2px;
+            padding: 0;
+            position: relative;
+        }
+
+        li button {
+            @include square(10);
+
+            @extend %button;
+
+            background: transparent;
+            color: transparent;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        li button:hover,
+        li button:focus {
+            outline: none;
+        }
+
+        li button:hover:before,
+        li button:focus:before {
+            opacity: 1;
+        }
+
+        li button:before {
+            @include square(10);
+
+            font-size: rem(25);
+            line-height: rem(10);
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '•';
+            text-align: center;
+            opacity: .25;
+            color: $meet-us-color;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        li[class^='slick-active'] button:before,
+        li[class*=' slick-active'] button:before {
+            color: $meet-us-color;
+            opacity: 1;
+        }
+    }
+
+    button[class^='slick-arrow'],
+    button[class*=' slick-arrow'] {
+        border-top: 2px solid $meet-us-color;
+        border-left: 2px solid $meet-us-color;
+		transform: rotate(-45deg);
+
+		&:before {
+			display: none;
+		}
+    }
+
+    button[class^='slick-next'],
+    button[class*=' slick-next'] {
+        transform: rotate(135deg);
+    }
+
+    button[class^='slick-disabled'],
+    button[class*=' slick-disabled'] {
+        opacity: 0.25
+    }
+}
