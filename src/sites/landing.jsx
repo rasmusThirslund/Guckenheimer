@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
-import TopMenu from "./components/landing/topmenu/topmenu";
-import TileContainer from "./components/landing/tilecontainer/tilecontainer";
-import BackgroundImage from "./components/landing/backgroundImage/backgroundImage";
+import TopMenu from "../components/landing/topmenu/topmenu";
+import TileContainer from "../components/landing/tilecontainer/tilecontainer";
+import BackgroundImage from "../components/landing/backgroundImage/backgroundImage";
 
 class Landing extends Component {
   render() {

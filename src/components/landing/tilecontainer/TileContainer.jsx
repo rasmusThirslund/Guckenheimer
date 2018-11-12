@@ -12,7 +12,6 @@ class TileContainer extends Component {
 
     return (
       <div className={styles.container}>
-        <br />
         <h1 className={styles["text-header"]}>
           <strong>Welcome to Shire</strong>
         </h1>
