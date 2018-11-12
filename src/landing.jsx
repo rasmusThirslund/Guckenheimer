@@ -6,16 +6,16 @@ import BackgroundImage from "./components/landing/backgroundImage/backgroundImag
 class Landing extends Component {
   render() {
     const diners = [
-      { name: "Shire Covington" },
-      { name: "Shire Bannockburn" },
-      { name: "Shire LA" },
-      { name: "Shire Thousand Oaks" },
-      { name: "Shire Exton" },
-      { name: "Shire Cafe 300" },
-      { name: "Shire Atas Café" },
-      { name: "Shire Brave Bar" },
-      { name: "Shire 95 Hayden Cafe" },
-      { name: "Shire Barista 55 Hayden" },
+      { name: "Covington" },
+      { name: "Bannockburn" },
+      { name: "LA" },
+      { name: "Thousand Oaks" },
+      { name: "Exton" },
+      { name: "Cafe 300" },
+      { name: "Atas Café" },
+      { name: "Brave Bar" },
+      { name: "95 Hayden Cafe" },
+      { name: "Barista 55 Hayden" },
       { name: "Barista 1445" }
     ];
 

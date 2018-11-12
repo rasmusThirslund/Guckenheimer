@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import styles from './tilecontainer.scss'
-import {Link} from "react-router-dom"
+import React, { Component } from "react";
+import styles from "./tilecontainer.scss";
+import { Link } from "react-router-dom";
 
 class TileContainer extends Component {
   constructor(props) {
@@ -8,20 +8,22 @@ class TileContainer extends Component {
   }
 
   render() {
-
     const diners = this.props.diners;
 
     return (
       <div className={styles.container}>
+        <br />
         <h1 className={styles["text-header"]}>
-          <strong>Please select a Dining Service</strong>
+          <strong>Welcome to Shire</strong>
         </h1>
+        <h3 className={styles["text-header"]}>please select your facility</h3>
+        <br />
         <section className={styles["tile-wrapper"]}>
-          {diners.map( (diner, index) =>
+          {diners.map((diner, index) => (
             <Link to="/menu" className={styles["tile-link"]} key={index}>
               {diner.name}
             </Link>
-          )}
+          ))}
         </section>
       </div>
     );

@@ -1,53 +1,58 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
-    background-color: $body-bg;
-    color: $text-color;
-    font-family: $font-family-base;
-    font-size: $font-size-base;
-    font-weight: $font-weight-base;
-    line-height: $line-height-base;
-    margin: 0;
-    padding-top: rem($menu-height);
-    text-align: left;
+  background-color: $body-bg;
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  margin: 0;
+  padding-top: 7rem;
+  text-align: left;
 }
 
 p {
-	margin: 0 0 1em;
+  margin: 0 0 1em;
 }
 
 strong {
-    font-weight: $font-weight-bold;
+  font-weight: $font-weight-bold;
 }
 
 ::placeholder {
-    color: lighten($text-color, 30%);
-    opacity: 1;
+  color: lighten($text-color, 30%);
+  opacity: 1;
 }
 
 :-ms-input-placeholder {
-    color: lighten($text-color, 30%);
+  color: lighten($text-color, 30%);
 }
 
 ::-ms-input-placeholder {
-    color: lighten($text-color, 30%);
+  color: lighten($text-color, 30%);
 }
-
-
 
 .slick-slider {
+  ul.slick-dots {
+    background: red;
 
-ul.slick-dots {
-	background: red;
-
-	li {
-		@include square(10);
-	}
+    li {
+      @include square(10);
+    }
+  }
 }
+
+@media screen and (min-width: 768px) {
+  body {
+    padding-top: rem($menu-height);
+  }
 }

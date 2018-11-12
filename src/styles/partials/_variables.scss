@@ -4,11 +4,12 @@ $black: #000 !default;
 $grey-light: #eeeeef;
 
 $brand-color-1: #387091;
-$brand-color-2: #f79b14;
+$brand-color-2: #eabb71;
 $brand-color-3: #5e5e5e;
 
 // Typography
-$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial,
+  sans-serif !default;
 $font-family-base: $font-family-sans-serif !default;
 
 $font-size-base: 1rem !default;
@@ -76,6 +77,6 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1280px;
 
 // spacings
-$spacing: $line-height-base * $font-size-base;  // 24px;
-$spacing-large: $line-height-base * $font-size-base * 2;  // 48px;
-$spacing-small: rem($line-height-base * $font-size-base * .5); // 12px;
+$spacing: $line-height-base * $font-size-base; // 24px;
+$spacing-large: $line-height-base * $font-size-base * 2; // 48px;
+$spacing-small: rem($line-height-base * $font-size-base * 0.5); // 12px;

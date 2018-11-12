@@ -2,27 +2,21 @@
 
 %block {
   display: flex;
-  width: 33%;
-  text-align: center;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: #ffffff;
   font-size: 1.5rem;
 }
 
 .topMenu {
-
   background: #fff;
   border-radius: 0;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
   left: 0;
   margin: 0;
   overflow: unset;
   position: fixed;
   top: 0;
-  height: 5rem;
   width: 100%;
   z-index: 100;
   transition-duration: 0s;
@@ -43,4 +37,22 @@
   @extend %block;
 
   background-color: #686870;
+}
+
+/**
+ ** Phone
+ */
+@media screen and (min-width: 768px) {
+  .topMenu {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 5rem;
+  }
+
+  .first,
+  .second,
+  .third {
+    width: 33%;
+  }
 }
