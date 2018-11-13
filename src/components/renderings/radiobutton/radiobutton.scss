@@ -21,7 +21,8 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #eee;
+  background-color: $white;
+  border: 1px solid #ddd;
   text-align: center;
   border-radius: 3px;
   font-size: 0.7rem;
@@ -35,9 +36,11 @@
 .wrapper input:hover ~ label {
   color: $white;
   background-color: $orange;
+  border-width: 0;
 }
 
 .wrapper input:checked ~ label {
   color: $white;
   background-color: $orange;
+  border-width: 0;
 }
