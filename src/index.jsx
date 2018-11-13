@@ -9,14 +9,14 @@ import NutritionPage2 from "./components/renderings/nutritionpage2";
 import NutritionPage3 from "./components/renderings/nutritionpage3";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={"/guckenheimer"}>
     <Switch>
       <Route exact path="/" component={Landing} />
-      <Route exact path="/menu" component={App} />
-      <Route exact path="/nutrition" component={NutritionPage} />
-      <Route exact path="/nutrition2" component={NutritionPage2} />
-      <Route exact path="/nutrition3" component={NutritionPage3} />
-      <Route exact path="/feedback" component={Feedback} />
+      <Route path="/menu" component={App} />
+      <Route path="/nutrition" component={NutritionPage} />
+      <Route path="/nutrition2" component={NutritionPage2} />
+      <Route path="/nutrition3" component={NutritionPage3} />
+      <Route path="/feedback" component={Feedback} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
