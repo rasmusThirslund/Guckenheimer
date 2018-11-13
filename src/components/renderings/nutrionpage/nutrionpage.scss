@@ -1,33 +1,36 @@
 @import "../../../styles/tools";
 
-nav {
-  @extend %section-block;
+.selectorWrapper {
+
+  padding: $spacing-large 0;
+
   background-color: $grey-light;
   margin-bottom: 0;
-  padding: $spacing-large;
 
-  > div {
-    width: 100%;
-    max-width: 40rem;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    @include mix-break-md{
-      flex-direction: row;
-      align-content: space-between;
-    }
-    > *  {
-      flex-basis: 50%;
-    }
-  }
-
-  select {
-    height: 3rem;
-  }
-
+  //
+  //> div {
+  //
+  //  max-width: 40rem;
+  //  margin: 0 auto;
+  //  display: flex;
+  //  flex-direction: column;
+  //  @include mix-break-md{
+  //    flex-direction: row;
+  //    align-content: space-between;
+  //  }
+  //  > *  {
+  //    flex-basis: 50%;
+  //  }
+  //}
+  //
+  //select {.
+  //  height: 3rem;
+  //}
 
 }
+
 .navHeader {
   font-size: 2rem;
+
 
 }

@@ -1,0 +1,23 @@
+@import "../../../styles/tools";
+
+
+
+.sectionWrapper {
+
+  @extend %section-block;
+
+  padding-left: $spacing;
+  padding-right: $spacing;
+  margin-left: 0;
+  margin-right: 0;
+
+  @include mix-break-md{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include mix-break-xl {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

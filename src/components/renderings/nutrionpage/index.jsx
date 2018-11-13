@@ -1,5 +1,11 @@
-import React, { Component, Fragment } from 'react';
-import style from './nutrionpage.scss';
+import React, {Component, Fragment} from 'react';
+import TopMenu from "../topmenu";
+import SectionWrapper from '../../layout/sectionWrapper';
+import SingleWrapper from "../../layout/singleWrapper";
+import Footer from "../footer";
+import styles from './nutrionpage.scss';
+import classNames from "classnames/bind";
+let cx = classNames.bind(styles);
 
 
 class NutritionPage extends Component {
@@ -7,26 +13,39 @@ class NutritionPage extends Component {
         super(props);
     }
 
-    render () {
+    render() {
 
         return (
-            <section>
+            <Fragment>
 
-                <nav>
-                    <div>
-                    <h1 className={style.navHeader}>Nutrion Fact</h1>
-                    <div>
-                    <select>
-                        <option value={null} >Select food type</option>
-                        <option>Food 1</option>
-                        <option>Food 2</option>
-                        <option>Food 3</option>
-                    </select>
-                    </div>
-                    </div>
-                </nav>
 
-            </section>
+                <TopMenu hideNavigation back/>
+
+
+                <SectionWrapper>
+
+                    <div className={styles.selectorWrapper}>
+                        <SingleWrapper>
+                            <h1 className={styles.navHeader}>Nutrion Fact</h1>
+                            <div>
+                                <select>
+                                    <option value={null}>Select food type</option>
+                                    <option>Food 1</option>
+                                    <option>Food 2</option>
+                                    <option>Food 3</option>
+                                </select>
+                            </div>
+                        </SingleWrapper>
+
+                    </div>
+
+                </SectionWrapper>
+
+
+                <Footer/>
+
+            </Fragment>
+
         )
     }
 }
