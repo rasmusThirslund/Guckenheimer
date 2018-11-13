@@ -11,8 +11,8 @@ class RadioButton extends Component {
 
     return (
       <div className={styles.wrapper}>
-        <input type="radio" name={name} id={id} />
-        <label for={id}>{text}</label>
+        <input type="radio" name={name} id={id} onClick={this.props.onClick} />
+        <label htmlFor={id}>{text}</label>
       </div>
     );
   }

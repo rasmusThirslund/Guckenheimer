@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, {Component, Fragment} from "react";
 import TopMenu from "../components/renderings/topmenu";
 import SectionWrapper from "../components/layout/sectionWrapper";
 import SingleWrapper from "../components/layout/singleWrapper";
@@ -8,6 +8,73 @@ import Heading from "../components/renderings/heading";
 import RadioButton from "../components/renderings/radiobutton";
 
 class Feedback extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      form: {
+        quality: "",
+        selection: "",
+        quantity: "",
+        value: "",
+        safety: ""
+      }
+    };
+  }
+
+  isValid() {
+    for (const prop in this.state.form) {
+      if (this.state.form.hasOwnProperty(prop)) {
+        if (this.state.form[prop] === "") {
+          return false;
+        }
+      }
+    }
+
+    return true;
+  }
+
+  submit(ev) {
+    ev.preventDefault();
+    let text = "You didn't answer all questions :)";
+
+    if (this.isValid()) {
+      text = `You submitted the following answers:
+      Quality: ${this.state.form.quality}
+      Selection: ${this.state.form.selection}
+      Quantity: ${this.state.form.quantity}
+      Value: ${this.state.form.value}
+      Safety: ${this.state.form.safety}
+      `;
+    }
+
+    alert(text);
+  }
+
+  answerList() {
+    return ["Excellent", "Above average", "Average", "Below Average", "Bad"];
+  }
+
+  setAnswerFor(questionId, answerIndex) {
+    const form = this.state.form;
+    form[questionId] = this.answerList()[answerIndex];
+    this.setState({ form });
+  }
+
+  renderAnswersFor(questionId) {
+    return this.answerList().map((text, index) => {
+      return (
+        <RadioButton
+          id={`${questionId}-${index}`}
+          text={text}
+          name={questionId}
+          key={index}
+          onClick={() => this.setAnswerFor(questionId, index)}
+        />
+      );
+    });
+  }
+
   render() {
     return (
       <Fragment>
@@ -22,7 +89,7 @@ class Feedback extends Component {
           </SingleWrapper>
         </SectionWrapper>
         <SectionWrapper>
-          <SingleWrapper>
+          <SingleWrapper className={styles["form-spacing"]}>
             <Heading h5>1. Food</Heading>
             <br />
             <form action="#">
@@ -34,19 +101,7 @@ class Feedback extends Component {
               </div>
               <br />
               <div className={styles["button-group"]}>
-                <RadioButton id="quality-one" text="Excellent" name="quality" />
-                <RadioButton
-                  id="quality-two"
-                  text="Above average"
-                  name="quality"
-                />
-                <RadioButton id="quality-three" text="Average" name="quality" />
-                <RadioButton
-                  id="quality-four"
-                  text="Below Average"
-                  name="quality"
-                />
-                <RadioButton id="quality-five" text="Bad" name="quality" />
+                {this.renderAnswersFor("quality")}
               </div>
               <br /> <br />
               <div>
@@ -57,27 +112,7 @@ class Feedback extends Component {
               </div>
               <br />
               <div className={styles["button-group"]}>
-                <RadioButton
-                  id="selection-one"
-                  text="Excellent"
-                  name="selection"
-                />
-                <RadioButton
-                  id="selection-two"
-                  text="Above average"
-                  name="selection"
-                />
-                <RadioButton
-                  id="selection-three"
-                  text="Average"
-                  name="selection"
-                />
-                <RadioButton
-                  id="selection-four"
-                  text="Below Average"
-                  name="selection"
-                />
-                <RadioButton id="selection-five" text="Bad" name="selection" />
+                {this.renderAnswersFor("selection")}
               </div>
               <br /> <br />
               <div>
@@ -88,27 +123,7 @@ class Feedback extends Component {
               </div>
               <br />
               <div className={styles["button-group"]}>
-                <RadioButton
-                  id="quantity-one"
-                  text="Excellent"
-                  name="quantity"
-                />
-                <RadioButton
-                  id="quantity-two"
-                  text="Above average"
-                  name="quantity"
-                />
-                <RadioButton
-                  id="quantity-three"
-                  text="Average"
-                  name="quantity"
-                />
-                <RadioButton
-                  id="quantity-four"
-                  text="Below Average"
-                  name="quantity"
-                />
-                <RadioButton id="quantity-five" text="Bad" name="quantity" />
+                {this.renderAnswersFor("quantity")}
               </div>
               <br /> <br />
               <div>
@@ -118,15 +133,7 @@ class Feedback extends Component {
               </div>
               <br />
               <div className={styles["button-group"]}>
-                <RadioButton id="value-one" text="Excellent" name="value" />
-                <RadioButton id="value-two" text="Above average" name="value" />
-                <RadioButton id="value-three" text="Average" name="value" />
-                <RadioButton
-                  id="value-four"
-                  text="Below Average"
-                  name="value"
-                />
-                <RadioButton id="value-five" text="Bad" name="value" />
+                {this.renderAnswersFor("value")}
               </div>
               <br /> <br />
               <div>
@@ -137,20 +144,16 @@ class Feedback extends Component {
               </div>
               <br />
               <div className={styles["button-group"]}>
-                <RadioButton id="safety-one" text="Excellent" name="safety" />
-                <RadioButton
-                  id="safety-two"
-                  text="Above average"
-                  name="safety"
-                />
-                <RadioButton id="safety-three" text="Average" name="safety" />
-                <RadioButton
-                  id="safety-four"
-                  text="Below Average"
-                  name="safety"
-                />
-                <RadioButton id="safety-five" text="Bad" name="safety" />
+                {this.renderAnswersFor("safety")}
               </div>
+              <br />
+              <button
+                type="submit"
+                className={styles.submit}
+                onClick={ev => this.submit(ev)}
+              >
+                Submit
+              </button>
             </form>
           </SingleWrapper>
         </SectionWrapper>
