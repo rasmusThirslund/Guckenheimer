@@ -8,3 +8,4 @@
 *.ipr
 .idea/
 dist.zip
+.DS_Store

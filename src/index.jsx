@@ -9,7 +9,7 @@ import NutritionPage2 from "./components/renderings/nutritionpage2";
 import NutritionPage3 from "./components/renderings/nutritionpage3";
 
 ReactDOM.render(
-  <BrowserRouter basename={"/guckenheimer"}>
+  <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Landing} />
       <Route path="/menu" component={App} />
