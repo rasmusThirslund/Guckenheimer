@@ -33,3 +33,56 @@
   font-size: 2rem;
 
 }
+
+$max-w: $screen-md-min;
+
+.player {
+  position: relative;
+  width: 100%;
+  max-width: $max-w;
+  margin: 0 auto;
+  //height: 0;
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: 52.5%;
+  }
+  > iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@mixin colorText {
+  color: $brand-color-2;
+  font-weight: bold;
+}
+
+.genericContent {
+
+  padding: 3rem 0;
+
+}
+
+.trumpet {
+  @include colorText;
+}
+
+.heading {
+  @include colorText;
+}
+
+.lead {
+  @include colorText;
+
+}
+
+.copy {
+  line-height: 1.4;
+}

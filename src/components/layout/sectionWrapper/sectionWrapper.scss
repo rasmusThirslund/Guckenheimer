@@ -6,8 +6,8 @@
 
   @extend %section-block;
 
-  padding-left: $spacing;
-  padding-right: $spacing;
+  //padding-left: $spacing;
+  //padding-right: $spacing;
   margin-left: 0;
   margin-right: 0;
 
@@ -20,4 +20,8 @@
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.marginBottomNone {
+  margin-bottom: 0;
 }
