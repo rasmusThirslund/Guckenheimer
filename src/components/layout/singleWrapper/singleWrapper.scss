@@ -6,8 +6,14 @@
 
   width: 100%;
   max-width: $max-paragraph-width;
-
   margin: 0 auto;
 
+  @include mix-break-md {
+    flex-direction: row;
+    align-content: space-between;
+  }
+  > * {
+    flex-basis: 50%;
+  }
 
 }
