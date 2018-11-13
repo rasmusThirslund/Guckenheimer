@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, {Component, Fragment} from "react";
 import TopMenu from "../components/renderings/topmenu";
 import SectionWrapper from "../components/layout/sectionWrapper";
 import SingleWrapper from "../components/layout/singleWrapper";

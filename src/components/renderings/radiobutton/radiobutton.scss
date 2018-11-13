@@ -35,12 +35,12 @@
 
 .wrapper input:hover ~ label {
   color: $white;
-  background-color: $orange;
+  background-color: $brand-color-2;
   border-width: 0;
 }
 
 .wrapper input:checked ~ label {
   color: $white;
-  background-color: $orange;
+  background-color: $brand-color-2;
   border-width: 0;
 }
