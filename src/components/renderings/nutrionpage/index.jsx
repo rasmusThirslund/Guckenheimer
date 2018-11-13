@@ -26,14 +26,16 @@ class NutritionPage extends Component {
 
                     <div className={styles.selectorWrapper}>
                         <SingleWrapper>
+                            <div className={styles.cols}>
                             <h1 className={styles.navHeader}>Nutrion Fact</h1>
-                            <div>
+                            <div className={styles.select}>
                                 <select>
                                     <option value={null}>Select food type</option>
                                     <option>Food 1</option>
                                     <option>Food 2</option>
                                     <option>Food 3</option>
                                 </select>
+                            </div>
                             </div>
                         </SingleWrapper>
 
