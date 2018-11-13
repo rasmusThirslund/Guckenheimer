@@ -11,7 +11,7 @@ import styles from "./styles/main.scss";
 
 class App extends Component {
   render() {
-    const s = styles;
+    const s = styles; //
     return (
       <Fragment>
         <TopMenu />
