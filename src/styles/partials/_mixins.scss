@@ -1,5 +1,5 @@
 // Small devices
-@mixin sm {
+@mixin mix-break-sm {
     @media (min-width: #{$screen-sm-min}) {
         @content;
     }

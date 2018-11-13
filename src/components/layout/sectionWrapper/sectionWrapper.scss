@@ -6,8 +6,8 @@
 
   @extend %section-block;
 
-  //padding-left: $spacing;
-  //padding-right: $spacing;
+  padding-left: $spacing;
+  padding-right: $spacing;
   margin-left: 0;
   margin-right: 0;
 
@@ -24,4 +24,13 @@
 
 .marginBottomNone {
   margin-bottom: 0;
+}
+
+.bgGrey {
+  background-color: $grey-light;
+}
+
+.walled { // on mobile
+    padding-left: 0;
+    padding-right: 0;
 }

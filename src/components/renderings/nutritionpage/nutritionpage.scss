@@ -2,10 +2,15 @@
 
 .selectorWrapper {
 
-  padding: $spacing-large 0;
+  padding-top: $spacing-large;
+  padding-bottom: $spacing-large;
 
-  background-color: $grey-light;
   margin-bottom: 0;
+  text-align: center;
+
+  @include mix-break-sm{
+    text-align: left;
+  }
 
 }
 
@@ -13,7 +18,7 @@
   display: flex;
   flex-direction: column;
 
-  @include mix-break-md {
+  @include mix-break-sm {
     flex-direction: row;
     align-content: space-between;
     align-items: center;
@@ -25,9 +30,13 @@
 }
 
 .select {
+  margin-top: $spacing;
   &,
   select {
     height: 3rem;
+  }
+  @include mix-break-sm{
+    margin-top: 0;
   }
 }
 
@@ -60,6 +69,9 @@ $max-w: $screen-md-min;
     height: 100%;
     width: 100%;
   }
+  @include mix-break-md{
+    margin-top: $spacing-huge;
+  }
 }
 
 @mixin colorText {
@@ -91,4 +103,16 @@ $max-w: $screen-md-min;
 
 .copy {
   line-height: 1.4;
+}
+
+.scrollY {
+  overflow-y: auto;
+}
+
+.table{
+  display: table;
+  width: 150%;
+  * {
+    padding: 5px;
+  }
 }

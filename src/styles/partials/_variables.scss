@@ -77,9 +77,10 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1280px;
 
 // spacings
+$spacing-small: rem($line-height-base * $font-size-base * 0.5); // 12px;
 $spacing: $line-height-base * $font-size-base; // 24px;
 $spacing-large: $line-height-base * $font-size-base * 2; // 48px;
-$spacing-small: rem($line-height-base * $font-size-base * 0.5); // 12px;
+$spacing-huge: $line-height-base * $font-size-base * 3;
 
 // WIDTHs
 $single-width: 36rem; // single wrapper

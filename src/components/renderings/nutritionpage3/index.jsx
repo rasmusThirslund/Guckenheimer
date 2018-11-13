@@ -3,15 +3,26 @@ import TopMenu from "../topmenu";
 import SectionWrapper from '../../layout/sectionWrapper';
 import SingleWrapper from "../../layout/singleWrapper";
 import Footer from "../footer";
-import styles from './nutrionpage.scss';
+import styles from '../nutritionpage/nutritionpage.scss';
 import classNames from "classnames/bind";
 
 let cx = classNames.bind(styles);
 
 
-class NutritionPage extends Component {
+class NutritionPage3 extends Component {
+
     constructor(props) {
         super(props);
+    }
+
+    _selectHandler(event){
+
+        const value = event.target.value;
+
+        if (value) {
+            document.location.href = "/" + value;
+        }
+
     }
 
     render() {
@@ -23,35 +34,33 @@ class NutritionPage extends Component {
                 <TopMenu hideNavigation back/>
 
 
-                <SectionWrapper flush="bottom">
+                <SectionWrapper flush="bottom" grey className={styles.selectorWrapper}>
 
-                    <div className={styles.selectorWrapper}>
                         <SingleWrapper>
                             <div className={styles.cols}>
                                 <h2 className={styles.navHeader}>Nutrion Fact</h2>
                                 <div className={styles.select}>
-                                    <select>
+
+                                    <select onChange={this._selectHandler.bind(this)}>
                                         <option value={null}>Select food type</option>
-                                        <option>Food 1</option>
-                                        <option>Food 2</option>
-                                        <option>Food 3</option>
+                                        <option value="nutrition">Type 1</option>
+                                        <option value="nutrition2">Pasta and sandwiches</option>
+                                        <option value="nutrition3">Type 3</option>
                                     </select>
                                 </div>
                             </div>
                         </SingleWrapper>
 
-                    </div>
-
                 </SectionWrapper>
 
-                <SectionWrapper>
+                <SectionWrapper walled>
 
                     <div className={styles.player}>
                         <iframe
                             src="https://www.youtube.com/embed/bpHFZ0JhGYc?start=7"
                             frameBorder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen></iframe>
+                            allowFullScreen/>
                     </div>
 
                     {/*<video src="https://youtu.be/bpHFZ0JhGYc?t=7&html5=True"></video>*/}
@@ -129,4 +138,4 @@ class NutritionPage extends Component {
     }
 }
 
-export default NutritionPage;
+export default NutritionPage3;

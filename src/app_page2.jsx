@@ -5,7 +5,7 @@ import React, { Component, Fragment } from 'react';
 // import ThreeColGrid from "./components/renderings/threecolgrid";
 // import MeetUs from "./components/renderings/meetus";
 // import Promotion from "./components/renderings/promotion";
-import NutritionPage from './components/renderings/nutrionpage'
+import NutritionPage from './components/renderings/nutritionpage'
 import TopMenu from "./components/renderings/topmenu";
 import Footer from "./components/renderings/footer";
 import styles from './styles/main.scss'
