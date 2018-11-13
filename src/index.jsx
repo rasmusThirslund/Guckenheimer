@@ -4,9 +4,9 @@ import App from "./app";
 import Landing from "./sites/landing";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Feedback from "./sites/feedback";
-import NutritionPage from './components/renderings/nutritionpage';
-import NutritionPage2 from './components/renderings/nutritionpage2';
-import NutritionPage3 from './components/renderings/nutritionpage3';
+import NutritionPage from "./components/renderings/nutritionpage";
+import NutritionPage2 from "./components/renderings/nutritionpage2";
+import NutritionPage3 from "./components/renderings/nutritionpage3";
 
 ReactDOM.render(
   <BrowserRouter>

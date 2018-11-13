@@ -79,6 +79,11 @@ class Feedback extends Component {
     return (
       <Fragment>
         <TopMenu hideNavigation back />
+        <SectionWrapper grey>
+          <SingleWrapper className={styles["header-spacing"]}>
+            <strong>FEEDBACK</strong>
+          </SingleWrapper>
+        </SectionWrapper>
         <SectionWrapper>
           <SingleWrapper className={styles["article-spacing"]}>
             <Article
