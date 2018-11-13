@@ -9,14 +9,16 @@
 
 }
 
-.cols {
+.cols { // todo move
   display: flex;
   flex-direction: column;
 
   @include mix-break-md {
     flex-direction: row;
     align-content: space-between;
+    align-items: center;
   }
+
   > * {
     flex-basis: 50%;
   }
@@ -30,7 +32,8 @@
 }
 
 .navHeader {
-  font-size: 2rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
 
 }
 
@@ -64,7 +67,7 @@ $max-w: $screen-md-min;
   font-weight: bold;
 }
 
-.genericContent {
+.genericContent { // todo move
 
   padding: 3rem 0;
 
@@ -76,11 +79,14 @@ $max-w: $screen-md-min;
 
 .heading {
   @include colorText;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: $spacing;
 }
 
 .lead {
   @include colorText;
-
+  margin-bottom: $spacing;
 }
 
 .copy {
