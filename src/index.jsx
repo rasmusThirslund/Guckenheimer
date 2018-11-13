@@ -9,6 +9,7 @@ ReactDOM.render(
     <Switch>
       <Route exact path="/" component={Landing} />
       <Route path="/menu" component={App} />
+      <Route path="/nutrition" component={NutrionPage} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
