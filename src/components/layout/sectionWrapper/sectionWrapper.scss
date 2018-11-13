@@ -21,3 +21,16 @@
     margin-right: auto;
   }
 }
+
+.marginBottomNone {
+  margin-bottom: 0;
+}
+
+.bgGrey {
+  background-color: $grey-light;
+}
+
+.walled { // on mobile
+    padding-left: 0;
+    padding-right: 0;
+}

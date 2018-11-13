@@ -3,15 +3,7 @@
 .singleWrapper {
 
   width: 100%;
-  max-width: $max-paragraph-width;
+  max-width: $single-width;
   margin: 0 auto;
-
-  @include mix-break-md {
-    flex-direction: row;
-    align-content: space-between;
-  }
-  > * {
-    flex-basis: 50%;
-  }
 
 }
