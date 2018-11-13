@@ -1,10 +1,24 @@
 import React, { Component, Fragment } from "react";
+import TopMenu from "../components/renderings/topmenu";
+import SectionWrapper from "../components/layout/sectionWrapper";
+import SingleWrapper from "../components/layout/singleWrapper";
+import Article from "../components/renderings/article";
+import styles from "./feedback.scss";
 
 class Feedback extends Component {
   render() {
     return (
       <Fragment>
-        <h1>Feedback</h1>
+        <TopMenu hideNavigation back />
+        <SectionWrapper>
+          <SingleWrapper className={styles.spacing}>
+            <Article
+              title="We'd love to hear your opinion and ideas"
+              body="We always strive to be better lorem ipsum dolor consecteteur eud
+              sit amet lorem ipsum dolor consecteteur eud sit amet."
+            />
+          </SingleWrapper>
+        </SectionWrapper>
       </Fragment>
     );
   }

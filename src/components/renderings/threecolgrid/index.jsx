@@ -9,12 +9,13 @@ class threeColGrid extends Component {
 		super(props);
 	}
 
-	render() {		
+	render() {
 		let gridClass = cx(this.props.type, {
 			threeColGrid: true,
 			section: true,
 			threeColGridReverse: this.props.reverse
 		})
+
 		return (
 			<div className={gridClass}>{this.props.children}</div>
 		);
