@@ -5,6 +5,7 @@ import SingleWrapper from "../../layout/singleWrapper";
 import Footer from "../footer";
 import styles from "./nutritionpage.scss";
 import classNames from "classnames/bind";
+import { Route } from "react-router-dom";
 
 let cx = classNames.bind(styles);
 
@@ -13,11 +14,11 @@ class NutritionPage extends Component {
     super(props);
   }
 
-  _selectHandler(event) {
+  _selectHandler(event, history) {
     const value = event.target.value;
 
     if (value) {
-      document.location.href = "/" + value;
+      history.push("/" + value);
     }
   }
 
@@ -31,12 +32,16 @@ class NutritionPage extends Component {
             <div className={styles.cols}>
               <h2 className={styles.navHeader}>Nutrion Fact</h2>
               <div className={styles.select}>
-                <select onChange={this._selectHandler.bind(this)}>
-                  <option value={null}>Select food type</option>
-                  <option value="nutrition">Type 1</option>
-                  <option value="nutrition2">Type 2</option>
-                  <option value="nutrition3">Type 3</option>
-                </select>
+                <Route
+                  render={({ history }) => (
+                    <select onChange={ev => this._selectHandler(ev, history)}>
+                      <option value={null}>Select food type</option>
+                      <option value="nutrition">Type 1</option>
+                      <option value="nutrition2">Type 2</option>
+                      <option value="nutrition3">Type 3</option>
+                    </select>
+                  )}
+                />
               </div>
             </div>
           </SingleWrapper>
