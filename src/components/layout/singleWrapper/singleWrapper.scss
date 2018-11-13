@@ -1,0 +1,21 @@
+@import "../../../styles/tools";
+
+
+
+.singleWrapper {
+
+  width: 100%;
+  max-width: $max-paragraph-width;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  @include mix-break-md {
+    flex-direction: row;
+    align-content: space-between;
+  }
+  > * {
+    flex-basis: 50%;
+  }
+
+}

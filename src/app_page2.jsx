@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import TopMenu from "./components/renderings/topmenu";
 // import Banner from "./components/renderings/banner";
 // import TodaysMenu from "./components/renderings/todaysmenu";
 // import TextMe from "./components/renderings/textme";
@@ -7,6 +6,7 @@ import TopMenu from "./components/renderings/topmenu";
 // import MeetUs from "./components/renderings/meetus";
 // import Promotion from "./components/renderings/promotion";
 import NutritionPage from './components/renderings/nutrionpage'
+import TopMenu from "./components/renderings/topmenu";
 import Footer from "./components/renderings/footer";
 import styles from './styles/main.scss'
 

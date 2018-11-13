@@ -41,7 +41,7 @@ class App extends Component {
             bannerBgStyle={{
               backgroundImage: "url('//picsum.photos/1280/500?image=835')"
             }}
-            href="/index2.html"
+            href="/nutrition"
           />
           <Banner
             type="inlineBanner"

@@ -11,7 +11,7 @@ ReactDOM.render(
     <Switch>
       <Route exact path="/" component={Landing} />
       <Route path="/menu" component={App} />
-      <Route path="/nutrition" component={NutrionPage} />
+      <Route exact path="/nutrition" component={NutrionPage} />
       <Route path="/feedback" component={Feedback} />
     </Switch>
   </BrowserRouter>,
