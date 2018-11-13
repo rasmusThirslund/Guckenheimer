@@ -1,0 +1,43 @@
+@import "../../../styles/tools";
+
+.wrapper {
+  position: relative;
+  margin: 0 5px;
+  padding: 5px;
+  flex-grow: 1;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.wrapper label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #eee;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 0.7rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.wrapper input:hover ~ label {
+  color: $white;
+  background-color: $orange;
+}
+
+.wrapper input:checked ~ label {
+  color: $white;
+  background-color: $orange;
+}
