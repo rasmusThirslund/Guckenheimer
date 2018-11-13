@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from "react";
+import React, { Component, Fragment } from "react";
 import TopMenu from "../components/renderings/topmenu";
 import SectionWrapper from "../components/layout/sectionWrapper";
 import SingleWrapper from "../components/layout/singleWrapper";
@@ -79,6 +79,11 @@ class Feedback extends Component {
     return (
       <Fragment>
         <TopMenu hideNavigation back />
+        <SectionWrapper grey>
+          <SingleWrapper className={styles["header-spacing"]}>
+            <strong>FEEDBACK</strong>
+          </SingleWrapper>
+        </SectionWrapper>
         <SectionWrapper>
           <SingleWrapper className={styles["article-spacing"]}>
             <Article
