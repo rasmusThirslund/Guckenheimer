@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import styles from "./heading.scss";
 import classnames from "classnames";
 
